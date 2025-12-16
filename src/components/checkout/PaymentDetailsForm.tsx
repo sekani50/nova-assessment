@@ -2,7 +2,6 @@ import { PaymentInputSection } from "./PaymentInputSection"
 import { Select, SelectOption } from "@/components/ui/select"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
-import { Wallet } from "lucide-react"
 import { cryptocurrencies, fiatCurrencies, wallets, paymentMethods } from "@/data/mockData"
 import { PaymentDetails } from "@/types/checkout"
 import { paymentDetailsSchema } from "@/schema/global.schema"
@@ -66,9 +65,7 @@ export function PaymentDetailsForm({
   const walletOptions: SelectOption[] = wallets.map((wallet) => ({
     value: wallet.id,
     label: wallet.name,
-    icon: wallet.icon === "wallet-icon" ? (
-      <Wallet className="h-5 w-5 text-gray-600" />
-    ) : wallet.icon ? (
+    icon:  wallet.icon ? (
       <img 
         src={wallet.icon} 
         alt={wallet.name} 

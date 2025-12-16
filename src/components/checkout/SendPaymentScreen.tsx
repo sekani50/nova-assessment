@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Copy, CheckCircle2, Info } from "lucide-react";
 import { useState } from "react";
 import { PaymentDetails } from "@/types/checkout";
+import { wallets } from "@/data/mockData";
 
 interface SendPaymentScreenProps {
   paymentDetails: PaymentDetails;
@@ -17,6 +18,10 @@ export function SendPaymentScreen({
   const [copied, setCopied] = useState(false);
   const mockAddress = "4LiV4YjbxsL6739MKghUd";
   const mockNetwork = paymentDetails.payCurrency || "ETH";
+
+  const selectedWallet = wallets.find(
+    (wallet) => wallet.id === paymentDetails.payFrom
+  );
 
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -84,7 +89,18 @@ export function SendPaymentScreen({
           </div>
           <div className="flex justify-between items-center">
             <span className="text-sm text-gray-600">Wallet</span>
-            <span className="font-semibold text-gray-900">Other</span>
+            <div className="flex items-center gap-2">
+              {selectedWallet?.icon && (
+                <img
+                  src={selectedWallet.icon}
+                  alt={selectedWallet.name}
+                  className="h-5 w-5 rounded-full object-contain"
+                />
+              )}
+              <span className="font-semibold text-gray-900">
+                {selectedWallet?.name ?? "Other"}
+              </span>
+            </div>
           </div>
         </div>
 

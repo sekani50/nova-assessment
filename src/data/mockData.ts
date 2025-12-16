@@ -1,4 +1,8 @@
 import { Currency, Wallet } from "@/types/checkout"
+import metamusk from "@/assets/metamusk.svg";
+import walletconnect from "@/assets/wallet-connect.svg";
+import otherswallet from "@/assets/other-wallet.svg";
+import rainbow from "@/assets/rainbow.svg";
 
 //? Using CoinGecko API for crypto logos
 const CRYPTO_LOGO_BASE = "https://assets.coingecko.com/coins/images"
@@ -52,22 +56,22 @@ export const wallets: Wallet[] = [
   { 
     id: "metamask", 
     name: "Metamask",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg"
+    icon: metamusk
   },
   { 
     id: "rainbow", 
     name: "Rainbow",
-    icon: "https://avatars.githubusercontent.com/u/43248574?s=200&v=4"
+    icon: rainbow
   },
   { 
     id: "walletconnect", 
     name: "WalletConnect",
-    icon: "https://avatars.githubusercontent.com/u/37784886?s=200&v=4"
+    icon: walletconnect
   },
   { 
     id: "other", 
     name: "Other Crypto Wallets (Binance, Coinbase, Bybit etc)",
-    icon: "wallet-icon" 
+    icon: otherswallet
   },
 ]
 

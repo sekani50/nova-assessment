@@ -20,19 +20,16 @@ export interface SelectProps {
 }
 
 const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
-  (
-    {
-      options,
-      value,
-      onValueChange,
-      placeholder = "Select an option",
-      className,
-      disabled,
-      modalClassName,
-      searchable = false,
-    },
-    ref
-  ) => {
+  ({
+    options,
+    value,
+    onValueChange,
+    placeholder = "Select an option",
+    className,
+    disabled,
+    modalClassName,
+    searchable = false,
+  }) => {
     const [open, setOpen] = React.useState(false);
     const [searchTerm, setSearchTerm] = React.useState("");
     const buttonRef = React.useRef<HTMLButtonElement>(null);

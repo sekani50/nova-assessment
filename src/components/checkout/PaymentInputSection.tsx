@@ -1,17 +1,16 @@
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { CurrencySelector } from "./CurrencySelector"
-import { Currency } from "@/types/checkout"
-import { Card, CardContent } from "@/components/ui/card"
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { CurrencySelector } from "./CurrencySelector";
+import { Currency } from "@/types/checkout";
 
 interface PaymentInputSectionProps {
-  label: string
-  amount: string
-  onAmountChange: (amount: string) => void
-  currency: string
-  onCurrencyChange: (currency: string) => void
-  currencies: Currency[]
-  className?: string
+  label: string;
+  amount: string;
+  onAmountChange: (amount: string) => void;
+  currency: string;
+  onCurrencyChange: (currency: string) => void;
+  currencies: Currency[];
+  className?: string;
 }
 
 export function PaymentInputSection({
@@ -25,11 +24,10 @@ export function PaymentInputSection({
 }: PaymentInputSectionProps) {
   return (
     <div className={className}>
-    
       <div className="rounded-3xl flex flex-col items-start justify-start border border-gray-200 bg-white p-4">
-      <Label className="text-sm font-medium text-gray-500 mb-3 block">
-        {label}
-      </Label>
+        <Label className="text-sm font-medium text-gray-500 mb-3 block">
+          {label}
+        </Label>
         <div className="flex  w-full justify-between gap-3 items-center">
           <Input
             type="number"
@@ -50,6 +48,5 @@ export function PaymentInputSection({
         </div>
       </div>
     </div>
-  )
+  );
 }
-
